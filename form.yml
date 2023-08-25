@@ -1,5 +1,7 @@
 ---
-cluster: "hawk"
+cluster: 
+  - "hawk"
+  - "hawkloginamd"
 
 form:
   - jupyterlab_switch
