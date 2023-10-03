@@ -37,10 +37,10 @@ export jupyter_api="$JUPYTER_API"
 port=$(find_port)
 
 # Find port to use for proxy
-sport=$(find_port)
-ssh -f -N -D$sport cl1
-export http_proxy="socks5h://localhost:$sport"
-export https_proxy="socks5h://localhost:$sport"
+#sport=$(find_port)
+#ssh -f -N -D$sport cl1
+#export http_proxy="socks5h://localhost:$sport"
+#export https_proxy="socks5h://localhost:$sport"
 
 # Generate SHA1 encrypted password (requires OpenSSL installed)
 SALT="$(create_passwd 16)"

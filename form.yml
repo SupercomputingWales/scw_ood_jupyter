@@ -1,11 +1,8 @@
 ---
-cluster: 
-  - "hawk"
-  - "hawkloginamd"
-
 form:
   - jupyterlab_switch
   - an_extra_args
+  - cluster
   - ha_modules
   - ha_partition
   - ha_tasks
@@ -32,6 +29,12 @@ attributes:
 
   an_extra_args:
     label: "Additional Jupyter arguments (optional)"
+  
+  cluster:
+    widget: "select"
+    options:
+      - ["Standard", "hawk"]
+      - ["AMD cluster", "hawkamdlogin"]
 
   ha_partition:
     label: "Partition"
