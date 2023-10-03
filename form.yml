@@ -34,7 +34,7 @@ attributes:
     widget: "select"
     options:
       - ["Standard", "hawk"]
-      - ["AMD cluster", "hawkamdlogin"]
+      - ["AMD cluster", "hawkloginamd"]
 
   ha_partition:
     label: "Partition"
