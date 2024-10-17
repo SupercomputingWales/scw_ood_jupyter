@@ -2,6 +2,7 @@
 form:
   - jupyterlab_switch
   - an_extra_args
+  - jupyterlab_version
   - cluster
   - ha_modules
   - ha_partition
@@ -17,6 +18,14 @@ form:
   - bc_email_on_started
 
 attributes:
+  jupyterlab_version:
+    label: "Version of JupyterLab."
+    help: "<small>Supported version of Jupyter available."
+    widget: select
+    options:
+      - ["jupyterlab (3.0.16), notebook (6.4.0)", "anaconda/2020.02"]
+      - ["jupyterlab (4.2.5), notebook (7.2.2)", "miniforge3/24.3.0-0"]
+    value: "anaconda/2020.02"
 
   jupyterlab_switch:
     widget: "check_box"

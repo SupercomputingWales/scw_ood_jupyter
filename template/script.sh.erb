@@ -17,15 +17,21 @@ module purge
 export PATH="/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
 
 # Load the require modules
-module load anaconda/2020.02
+<%- unless context.jupyterlab_version.blank? -%>
+# Load anaconda or miniforge3 module
+module load <%= context.jupyterlab_version %>
+eval "$(/apps/languages/<%= context.jupyterlab_version %>/bin/conda shell.bash hook)"
+conda activate ondemand_jupyter
+<%- end -%>
+#module load miniforge3/24.3.0-0
 
 <%- unless context.ha_modules.blank? -%>
 # Load additional modules
 module load <%= context.ha_modules %>
 <%- end -%>
 
-eval "$(/apps/languages/anaconda/2020.02/bin/conda shell.bash hook)"
-conda activate ondemand_jupyter
+#eval "$(/apps/languages/miniforge3/24.3.0-0/bin/conda shell.bash hook)"
+#conda activate ondemand_jupyter
 
 # List loaded modules
 module list
